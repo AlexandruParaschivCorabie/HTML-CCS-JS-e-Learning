@@ -1,0 +1,168 @@
+<html>
+<title >
+    Backtracking
+</title>
+<link href="foi de stil in cascada/general.css" rel="stylesheet" type="text/css"/></link>
+<link href="foi de stil in cascada/implementare.css" rel="stylesheet" type="text/css"/></link>
+
+<head>
+    <h1 class="titlu">Backtracking</h1>    
+</head>
+
+
+<body>
+
+<div class="baraNavigare">
+    <a href="acasa.html">ACASA</a>
+    <a class="active" href="implementare.html">IMPLEMENTARE</a>
+    <a href="exemple.html">EXEMPLE</a>
+    <a href="aplicatii.html">APLICATII</a>
+    <a href="javascript.html">JAVASCRIPT</a>
+    <a href="quiz.html">QUIZ</a>
+        <a href="simulare.html">SIMULARE</a>
+</div>
+
+<p class="subtitluImplementare">
+    Metoda Backtracking se poate implementa in doua moduri relativ asemanatoare:
+</p>
+<ol>
+<li class="titluImplementare">
+
+    Varianta Interativa
+
+</li>
+
+<img  src="imagini/backtracking.png" alt="O imagine cu un arbore de decizie." class="backtrackingImplementarePNG">
+
+<pre class="paragrafImplementare">
+
+        Void Back()
+
+    { int k, cand;
+
+    k=1; x[k]=a[k]-1;
+
+    while (k>0)
+
+        {cand=0;
+
+        while (x[k] < b[k] && !cand)
+
+                { x[k]=x[k]+1;
+
+                    cand=Valid(k);
+
+                }
+
+        if (!cand) k--;
+
+        else if (SolutieFinala(k))  Afisare(k);
+
+                else {k++; x[k]=a[k]-1;         
+
+                        }     
+
+    }
+</pre>
+
+
+
+<li class="titluImplementare">
+    
+    Varianta Recursiva
+
+</li>
+
+<img  src="imagini/recursivitate.png" alt="O imagine cu un arbore de decizie." class="backtrackingImplementarePNG_2">
+
+<pre class="paragrafImplementare">
+
+    Void Back(int k)
+
+    { for(int i=a[k]; i<=b[k]; i++)
+    
+           { x[k]=i;
+    
+             if (Valid(k))
+    
+               if (SolutieFinala(k)) Afisare(k);
+    
+            else Back(k+1);
+    
+           }
+    
+    }    
+
+</pre>
+
+<li class="titluImplementare">
+
+    Limbaj Java-Varianta Interativa
+
+</li>
+
+<img  src="imagini/javaBacktrackingIterativ.png" alt="O imagine cu un arbore de decizie." class="backtrackingImplementarePNG_3">
+
+
+<pre class="paragrafImplementare">
+
+    var subsets = function(nums) {
+        if (nums.length === 0) return [];
+    
+        var subsets = [];
+        subsets.push([], [nums[0]]);
+    
+        for (let i = 1; i < nums.length; i++) {
+            var currentLength = subsets.length;
+            for (var j = 0; j < currentLength; j++) {
+                subsets.push([...subsets[j], nums[i]]);
+            }
+        }
+        return subsets;
+    };
+
+</pre>
+
+
+<li class="titluImplementare">
+
+    Limbaj Java-Varianta Recursiva
+
+</li>
+
+<img  src="imagini/javaBacktracking.png" alt="O imagine cu un arbore de decizie." class="backtrackingImplementarePNG_4">
+
+
+<pre class="paragrafImplementare">
+
+    var subsets = function(nums) {
+        var combinations = [];
+        
+        var backtrack = function(nums, path){
+            combinations.push([...path]);
+            for (var i = 0; i < nums.length; i++){
+                path.push(nums[i]);
+                backtrack(nums.slice(i + 1), path);
+                path.pop(nums[i]);
+            }
+        }
+        backtrack(nums, []);
+        return combinations;
+    };
+
+</pre>
+
+
+
+
+
+</ol>
+<p class="paragrafObservatii">
+    Observatii:
+<br><br>
+1.Tehnica Backtracking are ca rezultat obţinerea tuturor soluţiilor problemei. În cazul în care se cere o sigură soluţie se poate forţa oprirea, atunci când a fost găsită.
+<br><br>
+2.Problemele rezolvate prin această metodă necesită un timp îndelungat. Din acest motiv, este bine să utilizăm metoda numai atunci când nu avem la dispoziţie un alt algoritm mai eficient. Cu toate că există probleme pentru care nu se pot elabora alţi algoritmi mai eficienţi, tehnica backtracking trebuie aplicată numai în ultimă instanţă.
+</p>
+</body>
+</html>

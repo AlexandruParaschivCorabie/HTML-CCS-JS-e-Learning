@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title >
+        Backtracking
+    </title>
+<link href="foi de stil in cascada/general.css" rel="stylesheet" type="text/css"/></link>
+<link href="foi de stil in cascada/simalare.css" rel="stylesheet" type="text/css"/></link>
+
+
+<head>
+    <h1 class="titlu">Backtracking</h1>    
+</head>
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="baraNavigare">
+        <a  href="acasa.html">ACASA</a>
+        <a href="implementare.html">IMPLEMENTARE</a>
+        <a href="exemple.html">EXEMPLE</a>
+        <a href="aplicatii.html">APLICATII</a>
+        <a  href="javascript.html">JAVASCRIPT</a> 
+        <a href="quiz.html">QUIZ</a>
+        <a class="active" href="simulare.html">SIMULARE</a>
+    </div>
+
+
+
+
+
+
+    <div class="centrareJoc" id="controls" style="padding:10px">
+        <input type="number" name="" id="rows" placeholder="Enter rows" value="4">
+        <input type="number" name="" id="cols" placeholder="Enter columns" value="4">
+        <button onclick="genGrid()">Generate Grid</button>
+        <button onclick="solve()">Solve Maze</button>
+    </div>
+    
+
+    <div id="canvas-div">
+        <canvas id="canvas" width="500px" height="500px"></canvas>
+    </div>
+   
+    <div class="centrareJoc" >
+        <p>
+            <b>Cum se joaca?<br></b>
+            Click Stanga pentru a adauga patrate negre(peretii labirintului)<br>
+            Prima apasare de rotita - Selecteaza punctul de start<br>
+            A doua apasare de rotita - Selecteaza iesirea<br>
+        </p>
+    </div>
+
+
+    
+
+
+</body>
+
+<script src="javascript/scriptSimulare.js"></script>
+
+</html>

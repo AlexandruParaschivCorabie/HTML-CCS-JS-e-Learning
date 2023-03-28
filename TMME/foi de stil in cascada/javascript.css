@@ -1,0 +1,70 @@
+body {
+    font-family: 'Inconsolata';
+    font-size: 18px;
+  }
+  
+  .container {
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .box1, .box2 {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+    padding: 5px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    /*
+    display: inline-block;
+    */
+    
+  }
+  
+  colgroup, tbody {
+    border: solid medium;
+  }
+  
+  td {
+    border: solid thin;
+    height: 2.5em;
+    width: 2.5em;
+    text-align: center;
+    padding: 0;
+  }
+  
+  input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    text-align: center;
+    font-family: 'Inconsolata';
+    font-size: 30px;
+  }
+  
+  button {
+    font-family: 'Inconsolata';
+    font-size: 20px;
+    width: 150px;
+    margin-bottom: 5px;
+  }
+  
+  .clue {
+    font-weight: 800;
+  }
+  
+  .solution {
+    color: rgb(100,149,237);
+    font-weight: 100;
+  }
+  
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
